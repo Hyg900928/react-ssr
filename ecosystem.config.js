@@ -29,7 +29,7 @@ module.exports = {
   ],
   deploy: {
     production: {
-      key: '/Users/hyg/.ssh',
+      key: '/Users/hyg/.ssh/id_rsa.pub',
       user: "root",
       host: ["120.78.212.232"],
       port: 3389,
