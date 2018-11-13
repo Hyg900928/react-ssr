@@ -29,10 +29,10 @@ module.exports = {
   ],
   deploy: {
     production: {
-      key: '/Users/hyg/.ssh/id_rsa.pub',
+      key: '/root/.ssh',
       user: "root",
       host: ["120.78.212.232"],
-      port: 3389,
+      port: 22,
       ref: "origin/master",
       repo: "git@github.com:Hyg900928/react-ssr.git",
       path: "/root/workspace/www",
