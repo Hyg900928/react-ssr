@@ -26,5 +26,21 @@ module.exports = {
         "postcss.config.js"
       ]
     }
-  ]
-};
+  ],
+  deploy: {
+    production: {
+      user: "root",
+      host: ["120.78.212.232"],
+      port: 22,
+      ref: "origin/master",
+      repo: "git@github.com:Hyg900928/react-ssr.git",
+      path: "/root/workspace/www",
+      ssh_options: "StrictHostKeyChecking=no",
+      "post-deploy": 'npm install && npm run build-prod && npm run start-prod',
+      env: {
+        NODE_ENV: 'production'
+      }
+
+    }
+  }
+}
