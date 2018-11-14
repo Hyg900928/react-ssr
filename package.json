@@ -12,7 +12,7 @@
     "build-alpha": "cross-env NODE_ENV=production DOMAIN_USE=alpha next build",
     "start-alpha": "cross-env NODE_ENV=production DOMAIN_USE=alpha PORT=${npm_config_aPort} pm2 start server/server.js --name ${npm_package_name}-alpha",
     "restart-alpha": "pm2 restart ${npm_package_name}-alpha",
-    "build-prod": "cross-env NODE_ENV=production DOMAIN_USE=production next build",
+    "build-prod": "next build",
     "start-prod": "cross-env NODE_ENV=production DOMAIN_USE=production  PORT=${npm_config_aPort} pm2 start server/server.js --name ${npm_package_name}-prod",
     "restart-prod": "pm2 restart ${npm_package_name}-prod"
   },
