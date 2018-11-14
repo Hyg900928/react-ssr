@@ -9,22 +9,14 @@ module.exports = {
     {
       name: 'development',
       script: 'server/server.js',
-      watch: true,
       env: {
         "NODE_ENV": "development",
-        "DOMAIN_USE": "development"
+        "DOMAIN_USE": "development",
+        "COMMON_VARIABLE": true
       },
       env_production: {
         NODE_ENV: 'production'
       },
-      watch: [
-        "server",
-        "next.config.js",
-        "babel.config.js",
-        "eslintrc",
-        "eslintignore",
-        "postcss.config.js"
-      ]
     }
   ],
   deploy: {
@@ -36,7 +28,7 @@ module.exports = {
       repo: "git@github.com:Hyg900928/react-ssr.git",
       path: "/root/workspace/www/production",
       ssh_options: "StrictHostKeyChecking=no",
-      "post-deploy": 'yarn  && yarn build-prod && yarn start-prod',
+      "post-deploy": 'yarn && pm2 startOrRestart ecosystem.config.js --env production',
       env: {
         NODE_ENV: 'production'
       }
