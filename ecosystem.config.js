@@ -7,7 +7,7 @@ module.exports = {
 
     // First application
     {
-      name: 'development',
+      name: 'react-ssr',
       script: 'server/server.js',
       env: {
         COMMON_VARIABLE: "true"
