@@ -20,13 +20,13 @@ module.exports = {
   deploy: {
     production: {
       user: "root",
-      host: ["120.78.212.232"],
+      host: ["47.92.67.199"],
       port: 22,
       ref: "origin/master",
       repo: "git@github.com:Hyg900928/react-ssr.git",
-      path: "/root/workspace/www/react-ssr/production",
+      path: "/root/www/react-ssr/production",
       ssh_options: "StrictHostKeyChecking=no",
-      "post-deploy": ' git pull origin master && cnpm install && npm run build-prod && npm run start-prod --env production',
+      "post-deploy": ' git pull origin master && npm install && npm run build-prod && npm run start-prod --env production',
       env: {
         NODE_ENV: 'production'
       }
