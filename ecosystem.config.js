@@ -26,7 +26,7 @@ module.exports = {
       repo: "git@github.com:Hyg900928/react-ssr.git",
       path: "/root/www/react-ssr/production",
       ssh_options: "StrictHostKeyChecking=no",
-      "post-deploy": ' git pull origin master && npm install && npm run build-prod && npm run start-prod --env production',
+      "post-deploy": ' git pull origin master && cnpm install && npm run build-prod && npm run start-prod --env production',
       env: {
         NODE_ENV: 'production'
       }
