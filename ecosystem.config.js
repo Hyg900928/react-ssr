@@ -29,7 +29,7 @@ module.exports = {
       "pre-setup": "ls -la",
       "post-setup": "ls -la",
       "pre-deploy-local": "echo 'This is a local executed command'",
-      "post-deploy": 'yarn && yarn run build-prod && yarn run start-prod',
+      "post-deploy": 'npm install && npm run build-prod && npm run start-prod',
       env: {
         NODE_ENV: 'production'
       }
