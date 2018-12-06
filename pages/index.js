@@ -9,7 +9,7 @@ const Index = (props) => {
             <p className={sass.red}>this is home page...</p>
             <p className={less.green}>abcdefg</p>
             <Link href={`/${language}/example`}>
-                <button>See Example</button>
+                <button>See Examples</button>
             </Link>
         </div>
     )
