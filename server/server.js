@@ -77,13 +77,13 @@ app.prepare().then(() => {
     })
     // root url, return home page. Just index page.
     router.get('/', async (ctx, next) => {
-        const actualPage = '/'
-        const queryParams = {}
+        const actualPage = '/index'
+        const queryParams = {key: 'home'}
         await app.render(ctx.req, ctx.res, actualPage, queryParams)
     })
     router.get('', async (ctx, next) => {
-        const actualPage = '/'
-        const queryParams = {}
+        const actualPage = '/index'
+        const queryParams = {key: 'home'}
         await app.render(ctx.req, ctx.res, actualPage, queryParams)
     })
     // other url, return 404 page
