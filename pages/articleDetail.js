@@ -11,12 +11,16 @@ class ArticleDetail extends React.Component {
         const { articleId } = query
         // 服务端渲染
       const res = await Api.getArticleInfo({id: articleId })
-      const articelInfo = res.data
+      let articelInfo = null
+      if(res.code === 0) {
+        articelInfo = res.data
+      }
+      
       return { articleId, articelInfo }
     }
     render() {
         const { articelInfo } = this.props
-        return (
+        return articelInfo ? (
             <div>
                 <Head>
                     <title>文章详情</title>
@@ -25,6 +29,8 @@ class ArticleDetail extends React.Component {
                 <div dangerouslySetInnerHTML={{ __html: articelInfo.content }}></div>
             </div>
         )
+        :
+        null
     }
 }
 
