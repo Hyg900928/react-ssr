@@ -9,12 +9,18 @@ module.exports = {
     {
       name: 'react-ssr',
       script: 'server/server.js',
+      watch: true,
       env: {
-        COMMON_VARIABLE: "true"
+        "NODE_ENV": "development",
+        COMMON_VARIABLE: "true",
+        "DOMAIN_USE": 'development'
       },
       env_production: {
         NODE_ENV: 'production'
       },
+      watch: [
+        "server"
+      ]
     }
   ],
   deploy: {

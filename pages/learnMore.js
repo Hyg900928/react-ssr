@@ -6,7 +6,7 @@ import { inject, observer} from 'mobx-react'
 
 @inject('rootStore')
 @observer
-class Index extends React.Component {
+class LearnMore extends React.Component {
     static async getInitialProps() {
         // 服务端渲染
       const res = await Api.getArticles()
@@ -25,10 +25,10 @@ class Index extends React.Component {
         const { articleList } = this.props
         return (
             <div>
-                首页
+                学习猿地
             </div>
         )
     }
 }
 
-export default Index
+export default LearnMore

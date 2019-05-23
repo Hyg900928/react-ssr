@@ -17,6 +17,17 @@ let API = {
                 userId: "100231"
             }
         })
+    },
+    getArticles: async (params) => {
+        return await HttpRequest.GET({
+            url: `${hosts.api}/api/v1/articles`
+        })
+        
+    },
+    getArticleInfo: async (params) => {
+        return await HttpRequest.GET({
+            url: `${hosts.api}/api/v1/article/${params.id}`
+        })
     }
 }
 

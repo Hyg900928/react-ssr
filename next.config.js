@@ -40,6 +40,7 @@ const nextConfig = {
         // Further custom configuration here
         config.resolve = {
             alias: {
+                ...(config.resolve.alias || {}),
                 PAGES: path.resolve(rootPath, 'pages'),
                 SCSS: path.resolve(rootPath, 'pages/source/scss'),
                 LESS: path.resolve(rootPath, 'pages/source/less'),

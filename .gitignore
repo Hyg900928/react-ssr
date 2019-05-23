@@ -7,3 +7,4 @@ dist/
 .next/
 dist_*
 yarn.lock*
+package-lock.json

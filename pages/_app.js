@@ -6,6 +6,8 @@ import { withRouter } from 'next/router'
 import I18N from 'I18N'
 import { initRootStore } from 'STORE/RootStore'
 import Head from 'next/head'
+
+
 @inject('rootStore')
 @observer
 class PropComponent extends React.Component {

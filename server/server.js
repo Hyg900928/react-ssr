@@ -5,7 +5,7 @@ const mobxReact = require('mobx-react')
 const { parse } = require('url')
 
 const dev = process.env.NODE_ENV !== 'production'
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 7002
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
@@ -46,6 +46,26 @@ app.prepare().then(() => {
     router.get('/example/antd', async (ctx, next) => {
         const actualPage = '/example-antd'
         const queryParams = {}
+        await app.render(ctx.req, ctx.res, actualPage, queryParams)
+    })
+    router.get('/articles', async (ctx, next) => {
+        const actualPage = '/articleList';
+        const { query } = ctx
+        // console.log('query', JSON.stringify(query))
+        const queryParams = { key: 'article' }
+        await app.render(ctx.req, ctx.res, actualPage, queryParams)
+    })
+    router.get('/articles/:id', async (ctx, next) => {
+        const actualPage = '/articleDetail';
+        const { query, params} = ctx
+        // console.log('params', params)
+        const queryParams = { key: 'article', articleId: params.id }
+        await app.render(ctx.req, ctx.res, actualPage, queryParams)
+    })
+    router.get('/learn', async (ctx, next) => {
+        const actualPage = '/learnMore';
+        const { query } = ctx
+        const queryParams = { key: 'learn' }
         await app.render(ctx.req, ctx.res, actualPage, queryParams)
     })
     // ------------------------------------example end-------------------------------------------------
