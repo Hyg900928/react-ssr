@@ -5,7 +5,7 @@ const mobxReact = require('mobx-react')
 const { parse } = require('url')
 
 const dev = process.env.NODE_ENV !== 'production'
-const PORT = process.env.PORT || 7002
+const PORT = process.env.PORT || 3000
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
