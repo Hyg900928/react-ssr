@@ -20,7 +20,6 @@ class BaseLayout extends React.Component {
     }
     render() {
         const { router } = this.props
-        console.log(router)
         const headerProps = {
             selectedKeys: router.query['key'] ? [router.query['key']] : ['home']
         }

@@ -6,6 +6,7 @@ const defaults = {
         'content-type': 'application/json'
     },
     credentials: 'same-origin',
+    mode: 'cors',
     ignoreAuthorization: false
 }
 let doRequest = async (url, options, todoObj) => {
