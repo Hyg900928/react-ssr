@@ -29,11 +29,11 @@ module.exports = {
   deploy: {
     production: {
       user: "root",
-      host: ["47.92.67.199"],
+      host: ["172.16.1.22"],
       port: 22,
       ref: "origin/master",
       repo: "git@github.com:Hyg900928/react-ssr.git",
-      path: "/root/www/test/production",
+      path: "/home/frontend/test/production",
       ssh_options: "StrictHostKeyChecking=no",
       "pre-setup": "ls -la",
       "post-setup": "ls -la",
