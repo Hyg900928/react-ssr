@@ -1,3 +1,6 @@
+  /*eslint no-dupe-keys: "error"*/
+
+
 module.exports = {
   /**
    * Application configuration section
@@ -9,7 +12,6 @@ module.exports = {
     {
       name: 'react-ssr',
       script: 'server/server.js',
-      watch: true,
       env: {
         "NODE_ENV": "development",
         COMMON_VARIABLE: "true",
@@ -31,7 +33,7 @@ module.exports = {
       port: 22,
       ref: "origin/master",
       repo: "git@github.com:Hyg900928/react-ssr.git",
-      path: "/root/www/react-ssr/production",
+      path: "/root/www/test/production",
       ssh_options: "StrictHostKeyChecking=no",
       "pre-setup": "ls -la",
       "post-setup": "ls -la",

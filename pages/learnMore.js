@@ -1,34 +1,58 @@
-import React from 'react'
-import fetch from 'isomorphic-fetch'
-import Api from 'API/example'
-import { inject, observer} from 'mobx-react'
+import React, { useEffect, useState } from "react";
+import Head from "next/head";
+import { inject, observer } from "mobx-react";
 
 
-@inject('rootStore')
-@observer
-class LearnMore extends React.Component {
-    static async getInitialProps() {
-        // 服务端渲染
-      const res = await Api.getArticles()
-      const articleList = res.data
-      return { articleList }
-    }
-    renderItem(item) {
-        return (
-            <div key={item._id}>
-                <h2>{ item.title}</h2>
-                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
-            </div>
-        )
-    }
-    render() {
-        const { articleList } = this.props
-        return (
-            <div>
-                学习猿地
-            </div>
-        )
-    }
+
+
+class Login {
+  constructor(userName, password) {
+    const PASSWORD = Symbol('password')
+    this.userName = userName;
+    this[PASSWORD] = password;
+    this[PASSWORD] = userName;
+  }
+  
 }
 
-export default LearnMore
+const login = new Login('admin', '123456')
+console.log(Object.getOwnPropertySymbols(login)[0])
+const key = Object.getOwnPropertySymbols(login)[0]
+login[key] = '890'
+console.log(login)
+console.log(login[key])
+
+const LearnMore = props => {
+  const [num, setNum] = useState(0);
+  const [count, setCount] = useState(1);
+  useEffect(() => {
+    console.log("222");
+    document.title = `you clicked ${count} tiems`;
+  });
+  // 1. Use the name state variable
+  const [name, setName] = useState("Mary");
+
+  // 2. Use an effect for persisting the form
+  useEffect(function persistForm() {
+    localStorage.setItem("formData", name);
+  });
+
+  // 3. Use the surname state variable
+  const [surname, setSurname] = useState("Poppins");
+
+  // 4. Use an effect for updating the title
+  useEffect(function updateTitle() {
+    document.title = name + " " + surname;
+  });
+
+  return (
+    <div>
+      <button onClick={() => setNum(num + 1)}>Num++</button>
+      <p>num: {num}</p>
+      <button onClick={() => setCount(count + 1)}>count++</button>
+      <p>cont: {count}</p>
+    </div>
+  );
+};
+
+export default LearnMore;

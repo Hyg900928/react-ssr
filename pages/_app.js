@@ -21,9 +21,9 @@ class PropComponent extends React.Component {
          */
         return (
             <Container>
-                <Head>
+                {/* <Head>
                     <title>My Next.js Application</title>
-                </Head>
+                </Head> */}
                 <BaseLayout language={this.props.language} rootStore={this.props.rootStore} router={this.props.router}>
                     <Component {...pageProps} language={this.props.language} rootStore={this.props.rootStore} router={this.props.router} />
                 </BaseLayout>

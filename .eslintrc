@@ -7,7 +7,8 @@
     "es6": true
   },
   "plugins": [
-    "react"
+    "react",
+    "react-hooks"
   ],
   "parserOptions": {
     "ecmaVersion": 6,
@@ -26,6 +27,8 @@
     "__PROD__": true
   },
   "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "no-unsafe-negation": 0,
     "accessor-pairs": 2,
     "array-bracket-spacing": 0,

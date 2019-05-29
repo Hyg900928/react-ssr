@@ -15,7 +15,7 @@ class CommonHeader extends React.Component {
     handleClick = e => {
         const pathname = e.item.props.href
         const key = e.key
-        console.log('click ', e.item.props);
+        // console.log('click ', e.item.props);
         NextRouter.push({
             pathname: pathname,
             query: {
